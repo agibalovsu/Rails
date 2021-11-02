@@ -15,30 +15,30 @@ categories = Category.create([
 ])
 
 tests = Test.create([
-  { title: 'Основы Ruby', level: 0,  category: categories[0] },
-  { title: 'SQL', level: 0,  category: categories[1] },
-  { title: 'Ruby on Rails', level: 0,  category: categories[2] },
-  { title: 'HTML', level: 0,  category: categories[3] }
+  { title: 'Основы Ruby', level: 0,   category_id: 1 },
+  { title: 'SQL', level: 0,  category_id: 2 },
+  { title: 'Ruby on Rails', level: 0,   category_id: 3 },
+  { title: 'HTML', level: 0,   category_id: 4 }
 ])
 
 questions = Question.create([
-  { body: 'Как обозначается конструктор в Ruby?', test: tests[0] },
-  { body: 'Что означает R в аббревиатуре CRUD?', test: tests[1] },
-  { body: 'При помощи какой команды создается новый скелет приложения?', test: tests[2] },
-  { body: 'При помощи какой команды создается ссылка?', test: tests[3] }
+  { body: 'Как обозначается конструктор в Ruby?', test_id: 1 },
+  { body: 'Что означает R в аббревиатуре CRUD?', test_id: 2 },
+  { body: 'При помощи какой команды создается новый скелет приложения?', test_id: 3 },
+  { body: 'При помощи какой команды создается ссылка?', test_id: 4 }
 ])
 
 answers = Answer.create([
-  { body: 'Initializer', question: questions[0] },
-  { body: 'Initialize', correct: true, question: questions[0] },
-  { body: 'Init', question: questions[0] },
-  { body: 'Ruby', question: questions[1] },
-  { body: 'Read', correct: true, question: questions[1] },
-  { body: 'Right', question: questions[1] },
-  { body: 'New', correct: true, question: questions[2] },
-  { body: 'Create', question: questions[2] },
-  { body: 'Select', question: questions[2] },
-  { body: 'Href', correct: true, question: questions[3]},
-  { body: 'Hr', question: questions[3]},
-  { body: 'Em', question: questions[3]}
+  { body: 'Initializer', question_id: 1 },
+  { body: 'Initialize', correct: true, question_id: 1 },
+  { body: 'Init', question_id: 1 },
+  { body: 'Ruby', question_id: 2 },
+  { body: 'Read', correct: true, question_id: 2 },
+  { body: 'Right', question_id: 2 },
+  { body: 'New', correct: true, question_id: 3 },
+  { body: 'Create', question_id: 3 },
+  { body: 'Select', question_id: 3 },
+  { body: 'Href', correct: true, question_id: 4 },
+  { body: 'Hr', question_id: 4 },
+  { body: 'Em', question_id: 4 }
 ])
