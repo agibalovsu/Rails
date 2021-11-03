@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 users = User.create(first_name: 'Sergey', last_name: 'Agibalov', email: 'agibalovsu@mail.ru')
 
-categories = Category.create([
+categories = Category.create!([
   { title: 'Ruby' }, 
   { title: 'SQL' }, 
   { title: 'Rails' }, 
@@ -15,30 +15,30 @@ categories = Category.create([
 ])
 
 tests = Test.create([
-  { title: 'Основы Ruby', level: 0,   category_id: 1 },
-  { title: 'SQL', level: 0,  category_id: 2 },
-  { title: 'Ruby on Rails', level: 0,   category_id: 3 },
-  { title: 'HTML', level: 0,   category_id: 4 }
+  { title: 'Основы Ruby', level: 0,   category_id: categories[0].id },
+  { title: 'SQL', level: 0,  category_id: categories[1].id },
+  { title: 'Ruby on Rails', level: 0,   category_id: categories[2].id },
+  { title: 'HTML', level: 0,   category_id: categories[3].id }
 ])
 
 questions = Question.create([
-  { body: 'Как обозначается конструктор в Ruby?', test_id: 1 },
-  { body: 'Что означает R в аббревиатуре CRUD?', test_id: 2 },
-  { body: 'При помощи какой команды создается новый скелет приложения?', test_id: 3 },
-  { body: 'При помощи какой команды создается ссылка?', test_id: 4 }
+  { body: 'Как обозначается конструктор в Ruby?', test_id: tests[0].id },
+  { body: 'Что означает R в аббревиатуре CRUD?', test_id: tests[1].id },
+  { body: 'При помощи какой команды создается новый скелет приложения?', test_id: tests[2].id },
+  { body: 'При помощи какой команды создается ссылка?', test_id: tests[3].id }
 ])
 
 answers = Answer.create([
-  { body: 'Initializer', question_id: 1 },
-  { body: 'Initialize', correct: true, question_id: 1 },
-  { body: 'Init', question_id: 1 },
-  { body: 'Ruby', question_id: 2 },
-  { body: 'Read', correct: true, question_id: 2 },
-  { body: 'Right', question_id: 2 },
-  { body: 'New', correct: true, question_id: 3 },
-  { body: 'Create', question_id: 3 },
-  { body: 'Select', question_id: 3 },
-  { body: 'Href', correct: true, question_id: 4 },
-  { body: 'Hr', question_id: 4 },
-  { body: 'Em', question_id: 4 }
+  { body: 'Initializer', question_id: questions[0].id },
+  { body: 'Initialize', correct: true, question_id: questions[0].id },
+  { body: 'Init', question_id: questions[0].id },
+  { body: 'Ruby', question_id: questions[1].id },
+  { body: 'Read', correct: true, question_id: questions[1].id },
+  { body: 'Right', question_id: questions[1].id },
+  { body: 'New', correct: true, question_id: questions[2].id },
+  { body: 'Create', question_id: questions[2].id },
+  { body: 'Select', question_id: questions[2].id },
+  { body: 'Href', correct: true, question_id: questions[3].id },
+  { body: 'Hr', question_id: questions[3].id },
+  { body: 'Em', question_id: questions[3].id }
 ])
