@@ -16,7 +16,7 @@ class Test < ApplicationRecord
   scope :level_hard, -> { where('level in ?', (5..FLOAT::INFINITY)) }
 
   validates :title, presence: true
-  validates :level, numericality: { only_integer: true }, allow_nil: true      
+  validates :level, numericality: { only_integer: true }     
   validates :title, uniqueness: {scope: :level, message: 'Title and level - unique'}
   
   validate :validate_above_zero, on: :create
