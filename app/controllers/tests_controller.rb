@@ -1,11 +1,53 @@
 class TestsController < ApplicationController
 
   def index
-    render json: {tests: Test.all}
+    @tests = Test.all
   end
 
   def show
-    render json: {tests: Test.find(params[:id])}
+    @test = Test.find(params[:id])
+    @questions = @test.questions
+  end
+
+  def new
+    @test = Test.new
+  end
+
+  def edit
+    @test = Test.find(params[:id])
+  end
+
+  def create
+    @test = Test.new(test_params)
+
+    if @test.save
+      redirect_to @test
+    else
+      render :new
+    end
+  end
+
+  def update
+    @test = Test.find(params[:id])
+
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @test = Test.find(params[:id])
+
+    @test.destroy
+    redirect_to tests_path
+  end
+
+  private
+
+  def test_params
+    params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
 
 end
