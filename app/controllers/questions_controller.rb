@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
   end
   
   def new
-    @question = Question.new
+    @question = @test.questions.new
   end
 
   def edit
@@ -37,12 +37,11 @@ class QuestionsController < ApplicationController
     redirect_to test_questions_path(@question.test_ids)
   end
 
-  def update
-    
+  def update 
     if @question.update(question_params)
       redirect_to @question
     else
-      render :edit
+      render :new
     end
   end
 
@@ -57,7 +56,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def rescue_with_question_not_found
