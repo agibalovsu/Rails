@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 users = User.create(first_name: 'Sergey', last_name: 'Agibalov', email: 'agibalovsu@mail.ru')
 
-categories = Category.create!([
+categories = Category.create([
   { title: 'Ruby' }, 
   { title: 'SQL' }, 
   { title: 'Rails' }, 

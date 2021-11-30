@@ -7,7 +7,7 @@ class User < ApplicationRecord
   #  Test.joins('join test_passages on test_passages.test_id = test_passages.user_id').where(tests: { level: level }).pluck(:title)
   #end
 
-  validates :email, presence: true
+
   
   private
 
