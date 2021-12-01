@@ -4,16 +4,13 @@ class AnswersController < ApplicationController
 
   def show
   end
-
   
   def new
     @answer = @question.answers.new
   end
-
   
   def edit
   end
-
   
   def create
     @answer = @question.answers.new(answer_params)
@@ -24,7 +21,6 @@ class AnswersController < ApplicationController
       render :new
     end
   end
-
   
   def update
 
@@ -34,7 +30,6 @@ class AnswersController < ApplicationController
       render :edit
     end
   end
-
   
   def destroy
     @answer.destroy

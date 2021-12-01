@@ -1,0 +1,14 @@
+<h1>Test <%= @test_transit.test.title %></h1>
+
+<% if @test_transit.test_success? %>
+  <p>
+    <%= t('.result') %><span class="success"><%= - @test_transit.result %></span>%. <%= t('.success') %>
+  </p>
+<% else %>
+  <p>
+    <%= t('.result') %><span class="fail"><%= - @test_transit.result %></span>%. <%= t('.fail') %>
+  </p>
+<% end %>
+
+<p><%= link_to t('buttons.all_tests'), tests_path %></p>
+

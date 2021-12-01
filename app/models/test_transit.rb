@@ -1,10 +1,10 @@
-class TestPassage < ApplicationRecord
+class TestTransit < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question'
 
   before_validation :before_validation_set_first_question, on: :create
-  before_save :before_save_set_next_question
+  before_save :before_save_set_next_question, unless: :new_record?
 
   SUCCESS_POINTS = 85
 
@@ -14,9 +14,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids) && answer_ids.present?
-
-    self.current_question = next_question
-    save!
+    save
   end
 
   def number_of_question
@@ -53,4 +51,5 @@ class TestPassage < ApplicationRecord
     self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end
+
 
