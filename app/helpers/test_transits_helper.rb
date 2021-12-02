@@ -1,2 +1,0 @@
-module TestTransitsHelper
-end
