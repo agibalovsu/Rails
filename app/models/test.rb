@@ -5,10 +5,6 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
   
-  #def self.tests_by_category(category)
-  # Test.joins('join categories on categories.id = tests.category_id').where(categories: { title: category }).order(title: :desc).pluck(:title)
-  #end
-  
   scope :tests_by_category, -> (category) { joins(:category).where(categories: { title: category }) }
   
   scope :level_easy, -> { where('level in ?', (0..1)) }
