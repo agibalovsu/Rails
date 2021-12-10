@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  def index
-    @user = current_user
-  end
 
   def new
 
@@ -17,6 +14,12 @@ class SessionsController < ApplicationController
       flash.now[:alert] = 'Проверьте правильность email и пароля'
       render :new
     end
+  end
+
+  def destroy
+    session.clear
+    cookies.clear
+    redirect_to login_path
   end
 
 end

@@ -1,13 +1,16 @@
 require 'digest/sha1'
+require 'uri'
 
 class User < ApplicationRecord
+
  
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :authors_tests, class_name: 'Test', foreign_key: :user_id
 
-  validates :email, presence: true, uniqueness: true
-  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates :email, presence: true, 
+                    uniqueness: true,
+                    format: URI::DEFAULT_PARSER.regexp[:ABS_URI]
 
   has_secure_password
 
