@@ -7,9 +7,10 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
+      session[:intended_url] = request.url
       redirect_to login_path, alert: 'Текущий пользователь не определен'
     end
-
+    
     cookies[:email] = current_user&.email
   end
 
