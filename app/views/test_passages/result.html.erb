@@ -1,14 +1,14 @@
-<h1>Test <%= @test_passage.test.title %></h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <% if @test_passage.test_success? %>
   <p>
-    <%= t('.result') %><span class="success"><%= - @test_passage.result %></span>%. <%= t('.success') %>
+    <%= t('.result') %><span class="success"><%= @test_passage.result %></span>%. <%= t('.success') %>
   </p>
 <% else %>
   <p>
-    <%= t('.result') %><span class="fail"><%= - @test_passage.result %></span>%. <%= t('.fail') %>
+    <%= t('.result') %><span class="fail"><%= @test_passage.result %></span>%. <%= t('.fail') %>
   </p>
 <% end %>
 
-<p><%= link_to t('buttons.all_tests'), tests_path %></p>
+<%= link_to t('.link_back'), tests_path %>
 

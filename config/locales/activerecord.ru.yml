@@ -1,0 +1,17 @@
+ru:
+  activerecord:
+    model:
+      test: "Тест"
+
+    attributes:
+      test:
+        title: "Название"
+
+    attributes:
+      model:
+        question:
+          body: "Вопрос"
+
+    errors:
+      messages:
+        blank: "не может быть пустым"  
