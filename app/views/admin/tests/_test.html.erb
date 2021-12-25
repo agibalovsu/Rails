@@ -6,8 +6,8 @@
   <td><%= link_to t('admin.answers.answer.edit'), edit_admin_test_path(test) %></td>
   <td>
     <%= link_to t('admin.answers.answer.delete'),
-                admin_test_path(test),
-                method: :delete,
-                data: {confirm: t('.del_confirm', title: test.title)} %>
-   </td>
+                  admin_test_path(test),
+                  method: :delete,
+                  data: {confirm: t('.del_confirm', title: test.title)} %>
+  </td>
 </tr>

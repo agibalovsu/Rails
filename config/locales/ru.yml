@@ -78,7 +78,6 @@ ru:
       answer:
         body: "Ответ"
         correct: "Корректность"
-      session
 
   tests:
     test:
@@ -91,6 +90,8 @@ ru:
       actions: "Действия"
 
   shared:
+    app_nav:
+      name: "ТестГуру"
     admin_nav:
       name: "Гуру"
       message: "Панель администратора"
