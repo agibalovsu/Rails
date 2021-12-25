@@ -1,33 +1,121 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :ru
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  admin:
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        del_confirm: "Are you sure?"
+      edit:
+        header: "Editing answer"
+        back: "Back"
+      new:
+        header: "New answer"
+      show:
+        header: "Question"
+        answer: "Answer:"
+        correct: "Correct:"
+    questions:
+      edit:
+        header: "Editing question"
+        back: "Back"
+      new:
+        header: "New question"
+      show:
+        body: "Body:"
+        message: "Tricky Questions"
+        header: " Question"
+        answers: "Answers"
+        edit_question: "Edit question"
+    tests:
+      index:
+        header: "Tricky Tests"
+        new_test: "Create test"
+        fail: "Not enough rights to view content"
+      create:
+        success: "Test was successfully created."
+      edit:
+        edit_title: "Edit test"
+      new:
+        new_test: "Create new test"
+      test:
+        del_confirm: "Delete test %{title}?"
+      show:
+        title: "Title:"
+        test: "Test"
+        level: "Level:"
+        new_question: "Create question"
+        questions: "Questions list"
+        edit_test: "Edit test"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+      question:
+        create: "Create question"
+        update: "Save question"
+      answer:
+        create: "Create answer"
+        update: "Update answer"
+    select:
+      prompt: "Select a category"
+    label:
+      test:
+        title: "Title:"
+        level: "Level:"
+        category_id: "Category"
+      question:
+        body: "Body"
+        test_id: "Test"
+      answer:
+        body: "Body"
+        correct: "Correct"
+
+  tests:
+    test:
+      begin: "Start test"
+    index:
+      header: "Tricky tests"
+      title: "Title"
+      level: "Level"
+      quest_count: "Questions count"
+      actions: "Actions"
+
+  shared:
+    admin_nav:
+      name: "Guru"
+      message: "Admin panel"
+      header: "Test Guru"
+      welcome: "Welcome, "
+      logout: "Logout"
+      sign_up: "Sign up"
+      sign_in: "Sign in"
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  test_passages:
+    result:
+      header: "Test %{title} was successfully completed!"
+      result: "Your result: "
+      success: "Test passed."
+      fail: "Try again."
+      link_back: "Return to test choice"
+    show:
+      current_test: "You're taking the test %{title}"
+      question_num: "Question № "
+      from: " from"
+      next: "Next"
+
+  
+
+ 
