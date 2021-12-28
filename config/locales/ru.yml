@@ -53,6 +53,12 @@ ru:
         new_question: "Создать вопрос"
         questions: "Вопросы теста"
         edit_test: "Редактировать тест"
+    gists:
+      index:
+        header: "Суть"
+        question: "Вопрос"
+        url: "Url Сути"
+        email: "Почта"
   
   helpers:
     submit:
@@ -119,6 +125,15 @@ ru:
       question_num: "Вопрос № "
       from: " из"
       next: "Далее"
+      gist: "Gist Вопрос"
+    gist:
+      success: "Gist успешно сохранен"
+      failure: "Во время сохранения gist произошла ошибка"
+      view_gist: "Посмотреть Gist на GitHub"
+
+  services:
+    gist_question_service:
+      message: "Вопрос из теста %{title} TestGuru"
       
   
 
