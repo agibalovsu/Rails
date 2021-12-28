@@ -90,6 +90,8 @@ en:
       actions: "Actions"
 
   shared:
+    app_nav:
+      name: "TestGuru"
     admin_nav:
       name: "Guru"
       message: "Admin panel"

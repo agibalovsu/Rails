@@ -1,8 +1,14 @@
-<div class="nav nav-admin">
-  <span class="nav-admin title"><%= t('shared.admin_nav.message') %></span>
-
-  <div class="nav-admin user">
-    <%= t('shared.admin_nav.welcome') %><b class="nav-admin user-email"><%= current_user.email %></b> <%= t('shared.admin_nav.name') %> |
-    <%= link_to t('shared.admin_nav.logout'), destroy_user_session_path, method: :delete %>
+<admin_nav class="navbar navbar-light bg-light">
+  <div class="navbar-brand">
+    <%= link_to t('shared.app_nav.name'), root_path %> |
+    <%= link_to t('shared.admin_nav.message'), admin_tests_path %>    
   </div>
-</div>
+  <span class="navbar-text"> 
+    <%= t('shared.admin_nav.welcome') %><b class="nav-admin user-email"><%= current_user.email %></b>  <%= t('shared.admin_nav.name') %> |
+    <%= link_to t('shared.admin_nav.logout'), destroy_user_session_path, method: :delete %>
+    </span>
+  </span>
+</admin_nav>
+
+ 
+
