@@ -17,7 +17,7 @@ class TestPassagesController < ApplicationController
 
     if service.success?
       
-      current_user.gists.create!(question: @test_passage.current_question,
+      current_user.gists.create(question: @test_passage.current_question,
                                  url: result.html_url)
       flash[:notice] = "#{t('.success')} #{view_context.link_to(t('.view_gist'),
                                                                 result.html_url,
