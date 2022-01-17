@@ -26,5 +26,13 @@ let check = function() {
 
     message.style.color = 'red';
     message.textContent = 'Пароли не совпадают';
+
+  } else {
+
+    smiley.classList.add('hide')
+    alert.classList.add('hide')
+
+    message.textContent = '';
+
   }
 }
