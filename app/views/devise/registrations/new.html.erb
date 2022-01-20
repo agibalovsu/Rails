@@ -28,7 +28,10 @@
 
   <div class="field check-pass">
     <%= f.label :password_confirmation, t('.password_confirmation') %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= octicon 'alert', class: 'text-danger hide' %>
+    <%= octicon 'smiley', class: 'text-success hide' %>
+    <span id='message'></span>
   </div>
 
   <div class="actions">
@@ -38,4 +41,4 @@
 
 <%= render "devise/shared/links" %>
 
-
+    
