@@ -15,7 +15,7 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true }     
   validates :title, uniqueness: {scope: :level, message: 'Title and level - unique'}
   
-  validate :validate_above_zero, on: :create
+  validate :validate_above_zero, on: %i[create update]
   
   private
 

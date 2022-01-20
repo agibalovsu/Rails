@@ -2,11 +2,11 @@
 
 <% if @test_passage.test_success? %>
   <p>
-    <%= t('.result') %><span class="success"><%= @test_passage.result %></span>%. <%= t('.success') %>
+     <%= t('.result') %><span class="success"><%= @test_passage.result %></span> % <%= t('.success') %>
   </p>
 <% else %>
   <p>
-    <%= t('.result') %><span class="fail"><%= @test_passage.result %></span>%. <%= t('.fail') %>
+     <%= t('.result') %><span class="fail"><%= @test_passage.result %></span> % <%= t('.fail') %>
   </p>
 <% end %>
 

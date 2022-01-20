@@ -3,7 +3,7 @@ ru:
 
   tests_mailer:
     completed_test:
-      subject: "Вы успешно завершили тест на TestGuru!"
+      subject: "Вы завершили тест на TestGuru!"
 
   admin:
     answers:
@@ -53,6 +53,8 @@ ru:
         new_question: "Создать вопрос"
         questions: "Вопросы теста"
         edit_test: "Редактировать тест"
+      form_inline:
+        submit: "Ok"
     gists:
       index:
         header: "Суть"
@@ -126,6 +128,7 @@ ru:
       from: " из"
       next: "Далее"
       gist: "Gist Вопрос"
+      progress_bar: "Процент прохождения теста: "
     gist:
       success: "Gist успешно сохранен"
       failure: "Во время сохранения gist произошла ошибка"

@@ -1,7 +1,7 @@
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
-  belongs_to :current_question, class_name: 'Question'
+  belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_question
 
@@ -13,7 +13,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids) && answer_ids.present?
-    save
+    save!
   end
 
   def number_of_question
@@ -43,6 +43,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
+    return if answer_ids.nil?
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
@@ -50,3 +51,15 @@ class TestPassage < ApplicationRecord
     current_question.answers.correct
   end
 end
+
+ 
+
+
+
+  
+
+
+
+
+
+  
