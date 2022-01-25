@@ -94,6 +94,7 @@ en:
       header: "Tricky tests"
       title: "Title"
       level: "Level"
+      category: "Category"
       quest_count: "Questions count"
       actions: "Actions"
 
