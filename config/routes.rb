@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
-      resources :answers, shalow: true, except: :index
+      resources :answers, shallow: true, except: :index
     end
 
     member do
@@ -25,8 +25,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'tests#index'
     resources :tests do
+      patch :update_inline, on: :member
       resources :questions, shallow: true, except: :index do
-        resources :answers, shalow: true, except: :index
+        resources :answers, shallow: true, except: :index
       end
     end
     resources :gists, only: :index

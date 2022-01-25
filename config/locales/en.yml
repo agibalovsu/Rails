@@ -53,6 +53,8 @@ en:
         new_question: "Create question"
         questions: "Questions list"
         edit_test: "Edit test"
+      form_inline:
+        submit: "Ok"
     gists:
       index:
         header: "Created gists"
@@ -124,6 +126,7 @@ en:
       from: " from"
       next: "Next"
       gist: "Gist Question"
+      progress_bar: "Progress bar: "
     gist:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist"
