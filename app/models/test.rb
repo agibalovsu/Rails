@@ -1,9 +1,9 @@
 class Test < ApplicationRecord
+  belongs_to :category
+  belongs_to :author, class_name: 'User', foreign_key: :author_id, optional: true
   has_many :questions, dependent: :nullify
   has_many :test_passages
   has_many :users, through: :test_passages
-  belongs_to :category
-  belongs_to :author, class_name: 'User'
   
   scope :tests_by_category, -> (category) { joins(:category).where(categories: { title: category }) }
   
@@ -16,7 +16,7 @@ class Test < ApplicationRecord
   validates :title, uniqueness: {scope: :level, message: 'Title and level - unique'}
   
   validate :validate_above_zero, on: %i[create update]
-  
+
   private
 
   def self.sort_by_category(category)

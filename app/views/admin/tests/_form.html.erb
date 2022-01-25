@@ -16,7 +16,8 @@
       <%= form.label :category_id %>:
       <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'custom-select' %>
     </p>
-    <%= form.submit t('admin.tests.edit.edit_title'), class: 'btn btn-primary'%>
+    
+    <%= form.submit t('admin.tests.new.new_test'), class: 'btn btn-primary'%>
   </div>
 <% end %>
 

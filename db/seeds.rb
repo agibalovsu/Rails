@@ -1,44 +1,49 @@
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-users = User.create(first_name: 'Sergey', last_name: 'Agibalov', email: 'agibalovsu@mail.ru')
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-categories = Category.create([
-  { title: 'Ruby' }, 
-  { title: 'SQL' }, 
-  { title: 'Rails' }, 
-  { title: 'HTML'}
-])
+users = User.create!([
+                         {first_name: 'admin',
+                          last_name: 'administrator',
+                          email:'agibalovsu@mail.ru',
+                          password: 'qwerty',
+                          password_confirmation: 'qwerty',
+                          type: 'Admin'}
+                     ])
 
-tests = Test.create([
-  { title: 'Основы Ruby', level: 0,   category_id: categories[0].id },
-  { title: 'SQL', level: 0,  category_id: categories[1].id },
-  { title: 'Ruby on Rails', level: 0,   category_id: categories[2].id },
-  { title: 'HTML', level: 0,   category_id: categories[3].id }
-])
+categories = Category.create!([
+                                  {title: 'Frontend'},
+                                  {title: 'Backend'},
+                                  {title: 'Mobile'}
+                              ])
 
-questions = Question.create([
-  { body: 'Как обозначается конструктор в Ruby?', test_id: tests[0].id },
-  { body: 'Что означает R в аббревиатуре CRUD?', test_id: tests[1].id },
-  { body: 'При помощи какой команды создается новый скелет приложения?', test_id: tests[2].id },
-  { body: 'При помощи какой команды создается ссылка?', test_id: tests[3].id }
-])
+tests = Test.create!([
+                         {title: 'Ruby', level: 2, category: categories[1], author: users[0]},
+                         {title: 'HTML', level: 1, category: categories[0], author: users[0]},
+                         {title: 'Python', level: 3, category: categories[1], author: users[0]},
+                         {title: 'Swift', level: 3, category: categories[2], author: users[0]},
+                         {title: 'JS', level: 2, category: categories[0], author: users[0]}
+                     ])
 
-answers = Answer.create([
-  { body: 'Initializer', question_id: questions[0].id },
-  { body: 'Initialize', correct: true, question_id: questions[0].id },
-  { body: 'Init', question_id: questions[0].id },
-  { body: 'Ruby', question_id: questions[1].id },
-  { body: 'Read', correct: true, question_id: questions[1].id },
-  { body: 'Right', question_id: questions[1].id },
-  { body: 'New', correct: true, question_id: questions[2].id },
-  { body: 'Create', question_id: questions[2].id },
-  { body: 'Select', question_id: questions[2].id },
-  { body: 'Href', correct: true, question_id: questions[3].id },
-  { body: 'Hr', question_id: questions[3].id },
-  { body: 'Em', question_id: questions[3].id }
-])
+questions = Question.create!([
+                                 {body: 'Кто такой Matz?', test: tests[0]},
+                                 {body: 'Что такое HTML?', test: tests[1]},
+                                 {body: 'Кто такой Gvido?', test: tests[2]},
+                                 {body: 'Swift это ЯП под Android или под iOS?', test: tests[3]},
+                                 {body: 'Что такое Callback hell?', test: tests[4]}
+                             ])
+
+answers = Answer.create!([
+                             {body: 'Создатель языка Руби', correct: true, question: questions[0]},
+                             {body: 'Создатель языка Пайтон', correct: false, question: questions[0]},
+                             {body: 'Создатель яыка JS', correct: false, question: questions[0]},
+                             {body: 'Создатель языка PHP', correct: false, question: questions[0]},
+                             {body: 'HyperText Markup Language', correct: true, question: questions[1]},
+                             {body: 'Hype Turbo Multi Language', correct: false, question: questions[1]},
+                             {body: 'Создатель языка Пайтон', correct: true, question: questions[2]},
+                             {body: 'Создатель языка PHP', correct: false, question: questions[2]},
+                             {body: 'Под iOS', correct: true, question: questions[3]},
+                             {body: 'Под Android', correct: false, question: questions[3]},
+                             {body: 'В JS есть второй псевдоним - лапша', correct: true, question: questions[4]},
+                             {body: 'Это такая игрушка', correct: false, question: questions[4]}
+                         ])
+
