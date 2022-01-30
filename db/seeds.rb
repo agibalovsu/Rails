@@ -1,7 +1,14 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-
+users = User.create!([
+                         {first_name: 'admin',
+                          last_name: 'administrator',
+                          email:'test@mail.ru',
+                          password: 'qwerty',
+                          password_confirmation: 'qwerty',
+                          type: 'Admin'}
+                     ])
 
 categories = Category.create!([
                                   {title: 'Frontend'},
