@@ -63,9 +63,10 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "test_guru_production"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'sheltered-wave-92361.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'test-guru-agibalovsy.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
+    domain: 'test-guru-agibalovsy.herokuapp.com',
     address:              'smtp.gmail.com',
     port:                 587,
     user_name:            ENV['SMTP_USERNAME'],
