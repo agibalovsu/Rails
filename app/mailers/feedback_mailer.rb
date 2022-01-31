@@ -9,3 +9,5 @@ class FeedbackMailer < ApplicationMailer
     mail from: @mailer
   end
 end
+
+
