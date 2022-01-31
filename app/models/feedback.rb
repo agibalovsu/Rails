@@ -5,5 +5,7 @@ class Feedback
 
   validates :email, presence: true,
                     format: URI::DEFAULT_PARSER.regexp[:ABS]
-  validates :message, presence: true,
+                    
+  validates :message, presence: true
 end
+
