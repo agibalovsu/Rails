@@ -9,13 +9,12 @@ class FeedbacksController < ApplicationController
 
     if @feedback.valid?
       flash[:notice] = t('.success')
-      FeedbackMailer.with(email: @feedback.email).send_message(@feedback).deliver_now
+      FeedbackMailer.with(email:  @feedback.email).send_message(@feedback).deliver_now
     else
       flash[:alert] = t('.failure')
     end
     redirect_to new_feedback_path
   end
-
 
   private
 
@@ -23,3 +22,4 @@ class FeedbacksController < ApplicationController
     params.require(:feedback).permit(:email, :message)
   end
 end
+
