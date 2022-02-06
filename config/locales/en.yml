@@ -53,6 +53,8 @@ en:
         new_question: "Create question"
         questions: "Questions list"
         edit_test: "Edit test"
+        message: "Need to create a question"
+        readiness: "Readiness"
       form_inline:
         submit: "Ok"
     gists:

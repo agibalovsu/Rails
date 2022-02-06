@@ -53,6 +53,8 @@ ru:
         new_question: "Создать вопрос"
         questions: "Вопросы теста"
         edit_test: "Редактировать тест"
+        message: "Необходимо создать вопрос"
+        readiness: "Готовность"
       form_inline:
         submit: "Ok"
     gists:
