@@ -16,7 +16,6 @@ class Test < ApplicationRecord
   validates :title, presence: true
   validates :level, numericality: { only_integer: true }     
   validates :title, uniqueness: {scope: :level, message: 'Title and level - unique'}
-  validates :readiness, acceptance: true, :if => Rails.env.production?
   
   validate :validate_above_zero, on: %i[create update]
 
