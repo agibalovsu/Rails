@@ -17,11 +17,11 @@ categories = Category.create!([
                               ])
 
 tests = Test.create!([
-                         {title: 'Ruby', level: 2, category: categories[1], author: users[0]},
-                         {title: 'HTML', level: 1, category: categories[0], author: users[0]},
-                         {title: 'Python', level: 3, category: categories[1], author: users[0]},
-                         {title: 'Swift', level: 3, category: categories[2], author: users[0]},
-                         {title: 'JS', level: 2, category: categories[0], author: users[0]}
+                         {title: 'Ruby', level: 2, category: categories[1], author: users[0], readiness: false},
+                         {title: 'HTML', level: 1, category: categories[0], author: users[0], readiness: false},
+                         {title: 'Python', level: 3, category: categories[1], author: users[0], readiness: false},
+                         {title: 'Swift', level: 3, category: categories[2], author: users[0], readiness: false},
+                         {title: 'JS', level: 2, category: categories[0], author: users[0], readiness: false}
                      ])
 
 questions = Question.create!([
