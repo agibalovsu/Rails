@@ -41,3 +41,5 @@ yarn-debug.log*
 
 # Ignore .env
 /.env
+
+/config/credentials/production.key
