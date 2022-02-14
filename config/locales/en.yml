@@ -53,6 +53,8 @@ en:
         new_question: "Create question"
         questions: "Questions list"
         edit_test: "Edit test"
+        message: "Need to create a question"
+        readiness: "Readiness"
       form_inline:
         submit: "Ok"
     gists:
@@ -136,6 +138,17 @@ en:
   services:
     gist_question_service:
       message: "A question from test %{title} TestGuru"
+
+  feedbacks:
+    new:
+      header: "Write a message to the site administration"
+    create:
+      success: "Your message has been sent to the administration"
+      failure: "Message not sent. An error occurred while sending"
+    form:
+      email: "Your email"
+      feedback: "Your message"
+      submit: "Submit"    
 
   
 

@@ -53,6 +53,8 @@ ru:
         new_question: "Создать вопрос"
         questions: "Вопросы теста"
         edit_test: "Редактировать тест"
+        message: "Необходимо создать вопрос"
+        readiness: "Готовность"
       form_inline:
         submit: "Ok"
     gists:
@@ -138,6 +140,17 @@ ru:
   services:
     gist_question_service:
       message: "Вопрос из теста %{title} TestGuru"
+
+  feedbacks:
+    new:
+      header: "Написать сообщение администрации сайта"
+    create:
+      success: "Ваше сообщение отправлено администрации"
+      failure: "Сообщение не отправлено. Во время отправки произошла ошибка"
+    form:
+      email: "Ваш адрес электронной почты"
+      feedback: "Ваше сообщение"
+      submit: "Отправить"    
       
   
 
