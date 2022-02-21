@@ -63,6 +63,27 @@ en:
         question: "Question"
         url: "Gist url"
         email: "User email"
+    badges:
+      create:
+        success: "Badge was successfully created"
+      edit:
+        edit_title: "Edit badge"
+      index:
+        header: "Badges"
+        new_badge: "Create new badge"
+        name: "Name"
+        image: "Image"
+        rule: "Rule"
+        parameter: "Parameter"
+      show:
+        user: "User"
+      form:
+        all_in_category: "All tests from category"
+        first_try: "Passed from the first attempt"
+        all_level: "All tests of the same level"
+        prompt: "Select rule"
+      badge:
+        del_confirm: "Delete badge %{name}?"
 
   helpers:
     submit:
@@ -130,6 +151,7 @@ en:
       next: "Next"
       gist: "Gist Question"
       progress_bar: "Progress bar: "
+      time_left: "Time for test:"
     gist:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist"
@@ -148,7 +170,12 @@ en:
     form:
       email: "Your email"
       feedback: "Your message"
-      submit: "Submit"    
+      submit: "Submit"  
+
+  user_badges:
+    index:
+      own_badges: "Earned badges"
+      general_badges: "All badges"  
 
   
 

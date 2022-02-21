@@ -1,0 +1,30 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+<%= render 'shared/errors', resource: @badge %>
+
+  <div class="form-group">
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
+
+    <p>
+      <%= form.label :image %><br>
+      <%= form.text_field :image %>
+    </p> 
+
+    <p>
+      <%= form.label :rule %>
+      <%= form.select(:rule, [[t('.all_in_category'), all_in_category],
+                              [t('.first_try'), first_try],
+                              [t('.all_level'), all_level]],
+                      prompt: t('.prompt')) %>
+    </p>
+
+    <p>
+      <%= form.label :parameter %><br>
+      <%= form.text_field :parameter %>
+    </p> 
+    
+    <%= form.submit t('admin.badges.index.new_badge'), class: 'btn btn-primary'%>
+  </div>
+<% end %>

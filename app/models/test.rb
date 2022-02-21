@@ -19,6 +19,9 @@ class Test < ApplicationRecord
   
   validate :validate_above_zero, on: %i[create update]
 
+  scope :by_level, -> (level) { where(level: level) }
+  scope :by_category_id, -> (category_id) { where(category_id: category_id) }
+
   private
 
   def self.sort_by_category(category)

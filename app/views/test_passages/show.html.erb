@@ -31,4 +31,8 @@
     <%= t('.from') %>
     <%= @test_passage.count_of_questions %>
   </b>
+  <%= content_tag :div,
+                  "#{ t('.time_left') } #{ @test_passage.time_left(@test_passage) }",
+                  class: 'timer',
+                  data: { timer: @test_passage.time_left(@test_passage) } %>
 </p>

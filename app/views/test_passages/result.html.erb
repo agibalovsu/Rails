@@ -1,6 +1,6 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<% if @test_passage.test_success? %>
+<% if @test_passage.time_left(@test_passage) && @test_passage.test_success? %>
   <p>
      <%= t('.result') %><span class="success"><%= @test_passage.result %></span> % <%= t('.success') %>
   </p>
