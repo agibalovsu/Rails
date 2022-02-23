@@ -19,6 +19,8 @@ class Test < ApplicationRecord
   
   validate :validate_above_zero, on: %i[create update]
 
+  scope :by_level, -> (level) { where(level: level) }
+
   private
 
   def self.sort_by_category(category)
@@ -29,4 +31,3 @@ class Test < ApplicationRecord
     errors.add(:level) if level.to_i < 0
   end
 end 
-

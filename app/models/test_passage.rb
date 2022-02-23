@@ -6,6 +6,8 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_question
 
   SUCCESS_POINTS = 85
+  
+  scope :test_passage_passed, -> { where(current_question: nil) }
 
   def completed?
     current_question.nil?
