@@ -47,4 +47,3 @@ class Admin::BadgesController < Admin::BaseController
   end
 end
 
-

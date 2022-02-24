@@ -17,7 +17,7 @@ class BadgeService
     return unless @test.category.title == badge.parameter 
     user_badge = UserBadge.by_rules(@user, badge).last
     category_tests = Test.tests_by_category(badge.parameter)
-    passed_tests = @test_passages.test_passage_passed.joins(:test).where("tests.category_id": @test.category_id)
+    passed_tests = @test_passages.test_passage_passed.joins(:test).where("tests.category.title": @test.category.title)
     category_tests.pluck(:id).sort == passed_tests.pluck(:test_id).uniq.sort
   end
 
