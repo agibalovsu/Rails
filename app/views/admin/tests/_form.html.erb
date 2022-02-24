@@ -18,9 +18,14 @@
     </p>
 
     <p>
-    <%= form.label :readiness, t('admin.tests.show.readiness') %>:
-    <%= form.check_box :readiness, id: :test_readiness %>
-  </p>
+      <%= form.label :readiness, t('admin.tests.show.readiness') %>:
+      <%= form.check_box :readiness, id: :test_readiness %>
+    </p>
+
+    <p>
+      <%= form.label :timer %><br>
+      <%= form.number_field :timer, id: :test_timer %>
+    </p>
     
     <%= form.submit t('admin.tests.new.new_test'), class: 'btn btn-primary'%>
   </div>

@@ -23,7 +23,7 @@ class BadgeService
 
   def success_all_level?(badge)
     return unless @test.level == badge.parameter.to_i 
-    user_badge = UserBadge.by_rules(@user, badge).last
+    user_badge = UserBadge.by_rules(@user, badge).lasts
     level_tests = Test.by_level(badge.parameter.to_i)
     passed_tests = @test_passages.test_passage_passed.joins(:test).where("tests.level": @test.level)
     level_tests.pluck(:id).sort == passed_tests.pluck(:test_id).uniq.sort

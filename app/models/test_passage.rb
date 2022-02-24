@@ -4,13 +4,11 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true, dependent: :destroy
 
   before_validation :before_validation_set_question
-
-  SUCCESS_POINTS = 85
   
   scope :test_passage_passed, -> { where(current_question: nil) }
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_out?
   end
 
   def accept!(answer_ids)
@@ -27,11 +25,19 @@ class TestPassage < ApplicationRecord
   end
 
   def test_success?
-    result >= SUCCESS_POINTS
+    result >= 85
   end
 
   def count_of_questions
     test.questions.count
+  end
+
+  def time_out?
+    (test.timer - (Time.now - created_at)).to_i <= 0
+  end
+
+  def time_left(test_passage)
+    test_passage.test.timer - (Time.now - test_passage.created_at).to_i if test_passage.test.timer > 0
   end
   
   private
