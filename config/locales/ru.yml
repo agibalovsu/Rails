@@ -153,7 +153,6 @@ ru:
       next: "Далее"
       gist: "Gist Вопрос"
       progress_bar: "Процент прохождения теста: "
-      time_left: "Время на тест:"
     gist:
       success: "Gist успешно сохранен"
       failure: "Во время сохранения gist произошла ошибка"
