@@ -8,7 +8,7 @@ class TestPassage < ApplicationRecord
   scope :passed, -> { where(current_question: nil ) }
 
   def completed?
-    current_question.nil?
+    current_question.nil? && time_out?
   end
 
   def accept!(answer_ids)
@@ -30,6 +30,14 @@ class TestPassage < ApplicationRecord
 
   def count_of_questions
     test.questions.count
+  end
+
+  def time_out?
+    (test.timer - (Time.now - created_at)).to_i <= 0
+  end
+
+  def time_left(test_passage)
+    test_passage.test.timer - (Time.now - test_passage.created_at).to_i if test_passage.test.timer > 0
   end
 
   private

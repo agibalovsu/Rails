@@ -18,6 +18,11 @@
     </p>
 
     <p>
+      <%= form.label :timer, t('admin.tests.show.timer') %>:
+      <%= form.check_box :timer, id: :test_timer %>
+    </p>
+
+    <p>
       <%= form.label :readiness, t('admin.tests.show.readiness') %>:
       <%= form.check_box :readiness, id: :test_readiness %>
     </p>
