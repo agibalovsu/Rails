@@ -5,7 +5,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_question
 
-  SUCCESS_POINTS = 85
+  scope :passed, -> { where(current_question: nil ) }
 
   def completed?
     current_question.nil?
@@ -25,13 +25,13 @@ class TestPassage < ApplicationRecord
   end
 
   def test_success?
-    result >= SUCCESS_POINTS
+    result >= 85
   end
 
   def count_of_questions
     test.questions.count
   end
-  
+
   private
 
   def before_validation_set_question

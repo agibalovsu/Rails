@@ -63,6 +63,27 @@ ru:
         question: "Вопрос"
         url: "Url Сути"
         email: "Почта"
+    badges:
+      create:
+        success: "Бейдж успешно создан"
+      edit:
+        edit_title: "Редактировать бейдж"
+      index:
+        header: "Бейджи"
+        new_badge: "Создать новый бейдж"
+        name: "Название"
+        image: "Награда"
+        rule: "Правило"
+        parameter: "Параметр"
+      show:
+        user: "Пользователь"
+      form:
+        all_in_category: "Все тесты из категории"
+        first_try: "Пройдено с первой попытки"
+        all_level: "Все тесты одного уровня"
+        prompt: "Выберите правило"
+      badge:
+        del_confirm: "Удалить бейдж %{name}?"
   
   helpers:
     submit:
@@ -150,7 +171,12 @@ ru:
     form:
       email: "Ваш адрес электронной почты"
       feedback: "Ваше сообщение"
-      submit: "Отправить"    
+      submit: "Отправить"  
+
+  user_badges:
+    index:
+      own_badges: "Заработанные бейджи"
+      general_badges: "Все доступные бейджи"  
       
   
 

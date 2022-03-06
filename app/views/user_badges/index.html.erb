@@ -1,0 +1,42 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4"><h2><%= t('.own_badges') %></h2></div>
+    <div class="col-10">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th class="sort-by-title pointer">
+            <%= t('admin.badges.index.name') %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>  
+          <th><%= t('admin.badges.index.image') %></th>
+          <th><%= t('admin.badges.index.rule') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <%= render partial: 'badge', collection: @user_badges, as: :badge %>
+        </tbody>
+      </table>
+    </div>
+
+  <div class="col col-md-4"><h2><%= t('.general_badges') %></h2></div>
+    <div class="col-10">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th class="sort-by-title pointer">
+            <%= t('admin.badges.index.name') %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>  
+          <th><%= t('admin.badges.index.image') %></th>
+          <th><%= t('admin.badges.index.rule') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <%= render partial: 'badge', collection: @badges, as: :badge %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
