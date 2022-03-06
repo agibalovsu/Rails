@@ -55,6 +55,7 @@ en:
         edit_test: "Edit test"
         message: "Need to create a question"
         readiness: "Readiness"
+        timer: "Timer"
       form_inline:
         submit: "Ok"
     gists:
@@ -151,6 +152,7 @@ en:
       next: "Next"
       gist: "Gist Question"
       progress_bar: "Progress bar: "
+      time_left: "Time for test:"
     gist:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist"
